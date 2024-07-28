@@ -9,12 +9,12 @@ int main() {
 
     vector<vector<int>> dp(k + 1, vector<int>(n + 1, 0));
 
-    // Initialize base case for arrays of length 1
+    
     for (int j = 1; j <= n; j++) {
         dp[1][j] = 1;
     }
 
-    // Fill the dp table
+
     for (int i = 2; i <= k; i++) {
         for (int j = 1; j <= n; j++) {
             for (int x = 1; x <= n; x++) {
@@ -25,7 +25,7 @@ int main() {
         }
     }
 
-    // Calculate the result
+    
     int res = 0;
     for (int j = 1; j <= n; j++) {
         res = (res + dp[k][j]) % mod;
